@@ -51,25 +51,26 @@
 
   <style>
     * { box-sizing: border-box; }
-    body { background:#F8F2E8; color:#101010; overflow-x:hidden; }
-    ::selection { background:#FFE500; color:#101010; }
-    .stroke { -webkit-text-stroke: 2px #101010; color: transparent; }
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(16,16,16,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16,16,16,.07) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .marquee { overflow:hidden; white-space:nowrap; }
-    .marquee-track { display:inline-block; min-width:200%; animation:scroll 22s linear infinite; }
-    @keyframes scroll { to { transform:translateX(-50%); } }
-    .reveal { opacity:0; transform:translateY(24px); transition:.55s ease; }
-    .reveal.visible { opacity:1; transform:none; }
-    .glitch:hover { text-shadow:3px 0 #FF5CCA,-3px 0 #246BFD; }
-    .repo-card:hover { transform:translate(-3px,-3px); box-shadow:10px 10px 0 #101010; }
-    .nav-link { position:relative; }
-    .nav-link:after { content:''; position:absolute; left:0; bottom:-3px; width:0; height:3px; background:#101010; transition:.2s; }
-    .nav-link:hover:after { width:100%; }
+    html { scroll-padding-top: 5rem; }
+    body { background: #f1f5f9; color: #172b44; overflow-x: hidden; }
+    ::selection { background: #cbdff3; color: #172b44; }
+    nav { background: rgba(241,245,249,.97); }
+    section, footer { background: transparent; }
+    .stroke { color: #466789; }
+    .marquee { display: none; }
+    .reveal { opacity: 1; transform: none; }
+    a { color: #24577b; text-underline-offset: 5px; }
+    a:hover { color: #163d59; text-decoration: underline; }
+    a:focus-visible { outline: 2px solid #24577b; outline-offset: 5px; }
+    h1 { font-size: clamp(2.5rem, 7.6vw, 7rem) !important; line-height: 1.08 !important; letter-spacing: -.045em !important; }
+    h2 { font-size: clamp(2rem, 5vw, 4rem) !important; overflow-wrap: anywhere; }
+    h3 { overflow-wrap: anywhere; }
+    #about img { filter: none; }
+    #about .max-w-md { padding: 0; }
+    .repo-card { padding: 1.5rem 0; }
+    .repo-card:hover { transform: none; box-shadow: none; }
+    .text-gray-400, .text-gray-500 { color: #526579; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   </style>
 
   <script type="application/ld+json">
@@ -93,7 +94,7 @@
 </head>
 
 <body class="font-display">
-  <nav class="fixed top-0 inset-x-0 z-50 border-b-4 border-black bg-neo-cream/95 backdrop-blur">
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur">
     <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
       <a href="#" class="font-black text-xl md:text-2xl tracking-tighter glitch">JASWANTH.exe</a>
       <div class="hidden md:flex items-center gap-6 font-mono font-bold text-sm">
@@ -101,19 +102,17 @@
         <a class="nav-link" href="#skills">/SKILLS</a>
         <a class="nav-link" href="#experience">/LOGS</a>
         <a class="nav-link" href="#projects">/WORK</a>
-        <a href="#contact" class="px-4 py-2 bg-neo-yellow border-2 border-black shadow-hard-sm hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition">CONNECT</a>
+        <a href="#contact" class="px-4 py-2 transition">CONNECT</a>
       </div>
-      <a class="md:hidden border-2 border-black px-3 py-2 bg-white font-mono font-bold" href="#projects">WORK</a>
+      <a class="md:hidden px-3 py-2 font-mono font-bold" href="#projects">WORK</a>
     </div>
   </nav>
 
   <main>
-    <section class="min-h-screen pt-24 px-4 flex items-center border-b-4 border-black grid-bg relative overflow-hidden">
-      <div class="absolute top-28 left-[8%] w-14 h-14 bg-neo-blue border-4 border-black rotate-12 shadow-hard hidden lg:block"></div>
-      <div class="absolute right-[7%] bottom-28 w-24 h-24 bg-neo-pink border-4 border-black rounded-full shadow-hard hidden lg:block"></div>
+    <section class="min-h-screen pt-24 px-4 flex items-center grid-bg relative overflow-hidden">
 
       <div class="max-w-7xl mx-auto w-full text-center relative z-10">
-        <div class="inline-block bg-white border-2 border-black shadow-hard-sm px-4 py-2 mb-8 rotate-[-1deg] reveal">
+        <div class="inline-block px-4 py-2 mb-8 reveal">
           <span class="font-mono font-bold"><span class="text-green-600">●</span> SYSTEM STATUS: ONLINE</span>
         </div>
 
@@ -122,7 +121,7 @@
           <span class="stroke">SOFTWARE DEV</span>
         </h1>
 
-        <div class="max-w-3xl mx-auto border-3 border-black bg-neo-yellow shadow-hard p-5 md:p-6 rotate-[1deg] reveal">
+        <div class="max-w-3xl mx-auto p-5 md:p-6 reveal">
           <p class="font-mono text-base md:text-xl leading-relaxed">
             Building practical software, Python projects, and data-driven systems.<br>
             <strong>Thrill AI • M.S. Data Science, NJIT ’26 • B.Tech, VIT Vellore ’23</strong>
@@ -130,50 +129,50 @@
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-5 reveal">
-          <a href="#projects" class="bg-black text-white border-2 border-black px-8 py-4 font-bold text-lg shadow-hard hover:bg-neo-green hover:text-black hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition">VIEW PROJECTS</a>
-          <a href="https://github.com/jaswanthreddynaga" target="_blank" rel="noreferrer" class="bg-white border-2 border-black px-8 py-4 font-bold text-lg shadow-hard hover:bg-neo-pink hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition">
+          <a href="#projects" class="text-slate-700 px-8 py-4 font-bold text-lg hover:text-black transition">VIEW PROJECTS</a>
+          <a href="https://github.com/jaswanthreddynaga" target="_blank" rel="noreferrer" class="px-8 py-4 font-bold text-lg transition">
             <i class="ri-github-fill mr-2"></i>GITHUB PROFILE
           </a>
         </div>
       </div>
     </section>
 
-    <div class="marquee bg-neo-blue text-white border-b-4 border-black py-3 font-mono font-black text-xl">
+    <div class="marquee text-slate-700 py-3 font-mono font-black text-xl">
       <div class="marquee-track">
         PYTHON ★ AI ENGINEERING ★ DATA SCIENCE ★ SOFTWARE DEVELOPMENT ★ APIs ★ DATABASES ★ GIT & GITHUB ★
         PYTHON ★ AI ENGINEERING ★ DATA SCIENCE ★ SOFTWARE DEVELOPMENT ★ APIs ★ DATABASES ★ GIT & GITHUB ★
       </div>
     </div>
 
-    <section id="about" class="py-24 px-4 border-b-4 border-black">
+    <section id="about" class="py-24 px-4">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-center">
         <div class="reveal">
-          <div class="bg-[#87CEEB] border-4 border-black shadow-hard-xl p-4 rotate-[-2deg] max-w-md mx-auto">
-            <div class="bg-white border-4 border-black overflow-hidden aspect-square relative">
+          <div class="p-4 max-w-md mx-auto">
+            <div class="overflow-hidden aspect-square relative">
               <img src="portrait.png" alt="Jaswanth Reddy Naga portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
             </div>
           </div>
         </div>
 
         <div class="reveal">
-          <p class="font-mono font-bold text-neo-blue mb-3">&gt; WHO_AM_I</p>
+          <p class="font-mono font-bold text-slate-700 mb-3">&gt; WHO_AM_I</p>
           <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">Jaswanth<br>Reddy Naga</h2>
           <p class="text-xl md:text-2xl font-bold mb-5">
-            AI Engineer & Software Developer at <span class="bg-neo-yellow px-2 border-2 border-black">Thrill AI</span>.
+            AI Engineer & Software Developer at <span class="px-2">Thrill AI</span>.
           </p>
-          <p class="font-mono text-gray-700 text-base md:text-lg leading-relaxed border-l-4 border-neo-blue pl-5">
+          <p class="font-mono text-gray-700 text-base md:text-lg leading-relaxed pl-5">
             I focus on software development, Python programming, data science, and building reliable applications. My public GitHub includes calculator projects, a QR code generator, and engineering-focused Python repositories.
           </p>
           <div class="grid sm:grid-cols-3 gap-4 mt-8 font-mono">
-            <div class="bg-white border-2 border-black shadow-hard-sm p-4">
+            <div class="p-4">
               <div class="text-xs text-gray-500">CURRENT_ROLE</div>
               <div class="font-bold">AI Engineer</div>
             </div>
-            <div class="bg-white border-2 border-black shadow-hard-sm p-4">
+            <div class="p-4">
               <div class="text-xs text-gray-500">FOCUS</div>
               <div class="font-bold">Data + Software</div>
             </div>
-            <div class="bg-white border-2 border-black shadow-hard-sm p-4">
+            <div class="p-4">
               <div class="text-xs text-gray-500">LOCATION</div>
               <div class="font-bold">New York</div>
             </div>
@@ -182,33 +181,33 @@
       </div>
     </section>
 
-    <section id="skills" class="py-24 bg-neo-black text-white border-b-4 border-black">
+    <section id="skills" class="py-24 text-slate-700">
       <div class="max-w-7xl mx-auto px-4">
-        <p class="font-mono text-neo-green font-bold mb-3">&gt; CAPABILITIES</p>
+        <p class="font-mono text-slate-700 font-bold mb-3">&gt; CAPABILITIES</p>
         <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12">Skill_Nodes</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-0 border-l-2 border-t-2 border-white/30 reveal">
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-yellow hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ LANGUAGE</span><div class="text-xl font-black mt-2">PYTHON</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-green hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ FIELD</span><div class="text-xl font-black mt-2">DATA SCIENCE</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-pink hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ FIELD</span><div class="text-xl font-black mt-2">AI / ML</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-blue transition"><span class="font-mono text-xs opacity-60">&gt;_ DEV</span><div class="text-xl font-black mt-2">SOFTWARE DEV</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-orange hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ BACKEND</span><div class="text-xl font-black mt-2">APIs</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-white hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ DATA</span><div class="text-xl font-black mt-2">DATABASES</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-red transition"><span class="font-mono text-xs opacity-60">&gt;_ TOOLS</span><div class="text-xl font-black mt-2">GIT / GITHUB</div></div>
-          <div class="p-6 border-r-2 border-b-2 border-white/30 hover:bg-neo-yellow hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ QUALITY</span><div class="text-xl font-black mt-2">TESTING</div></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-0 reveal">
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ LANGUAGE</span><div class="text-xl font-black mt-2">PYTHON</div></div>
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ FIELD</span><div class="text-xl font-black mt-2">DATA SCIENCE</div></div>
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ FIELD</span><div class="text-xl font-black mt-2">AI / ML</div></div>
+          <div class="p-6 transition"><span class="font-mono text-xs opacity-60">&gt;_ DEV</span><div class="text-xl font-black mt-2">SOFTWARE DEV</div></div>
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ BACKEND</span><div class="text-xl font-black mt-2">APIs</div></div>
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ DATA</span><div class="text-xl font-black mt-2">DATABASES</div></div>
+          <div class="p-6 transition"><span class="font-mono text-xs opacity-60">&gt;_ TOOLS</span><div class="text-xl font-black mt-2">GIT / GITHUB</div></div>
+          <div class="p-6 hover:text-black transition"><span class="font-mono text-xs opacity-60">&gt;_ QUALITY</span><div class="text-xl font-black mt-2">TESTING</div></div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="py-24 px-4 border-b-4 border-black">
+    <section id="experience" class="py-24 px-4">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter text-center mb-16">Experience<span class="text-neo-red">_Log</span></h2>
+        <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter text-center mb-16">Experience<span class="text-slate-700">_Log</span></h2>
         <div class="grid lg:grid-cols-2 gap-8">
-          <article class="reveal bg-white border-4 border-black shadow-hard p-7">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b-2 border-dashed border-gray-300">
+          <article class="reveal p-7">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
               <h3 class="text-3xl font-black uppercase">AI Engineer & Software Developer</h3>
-              <span class="font-mono text-xs bg-black text-white px-3 py-2">CURRENT</span>
+              <span class="font-mono text-xs text-slate-700 px-3 py-2">CURRENT</span>
             </div>
-            <p class="font-mono text-xl text-neo-blue font-bold mt-5">@ THRILL AI</p>
+            <p class="font-mono text-xl text-slate-700 font-bold mt-5">@ THRILL AI</p>
             <ul class="font-mono text-gray-700 list-disc pl-5 mt-5 space-y-3">
               <li>Software application development and support.</li>
               <li>Backend development, debugging, and issue resolution.</li>
@@ -218,65 +217,65 @@
           </article>
 
           <div class="grid gap-8">
-            <article class="reveal bg-neo-black text-white border-4 border-black shadow-hard p-7">
-              <div class="font-mono text-neo-green text-sm mb-3">&gt; EDUCATION_01</div>
+            <article class="reveal text-slate-700 p-7">
+              <div class="font-mono text-slate-700 text-sm mb-3">&gt; EDUCATION_01</div>
               <h3 class="text-3xl font-black">M.S. DATA SCIENCE</h3>
               <p class="font-mono text-lg mt-2">New Jersey Institute of Technology</p>
               <p class="font-mono text-gray-400 mt-2">Class of 2026</p>
             </article>
-            <article class="reveal bg-neo-blue text-white border-4 border-black shadow-hard p-7">
-              <div class="font-mono text-neo-yellow text-sm mb-3">&gt; EDUCATION_02</div>
+            <article class="reveal text-slate-700 p-7">
+              <div class="font-mono text-slate-700 text-sm mb-3">&gt; EDUCATION_02</div>
               <h3 class="text-3xl font-black">B.TECH</h3>
               <p class="font-mono text-lg mt-2">VIT Vellore</p>
-              <p class="font-mono text-white/70 mt-2">Class of 2023</p>
+              <p class="font-mono text-slate-700 mt-2">Class of 2023</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="py-24 px-4 bg-neo-yellow border-b-4 border-black">
+    <section id="projects" class="py-24 px-4">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <p class="font-mono font-bold">&gt; PUBLIC_REPOSITORIES</p>
-            <h2 class="text-6xl md:text-9xl font-black uppercase tracking-tighter text-white" style="-webkit-text-stroke:2px #101010;">Selected_Work</h2>
+            <h2 class="text-6xl md:text-9xl font-black uppercase tracking-tighter text-slate-700">Selected_Work</h2>
           </div>
-          <a href="https://github.com/jaswanthreddynaga?tab=repositories" target="_blank" rel="noreferrer" class="bg-black text-white border-2 border-black px-6 py-4 font-mono font-bold shadow-hard hover:bg-neo-green hover:text-black transition">ALL REPOS ↗</a>
+          <a href="https://github.com/jaswanthreddynaga?tab=repositories" target="_blank" rel="noreferrer" class="text-slate-700 px-6 py-4 font-mono font-bold hover:text-black transition">ALL REPOS ↗</a>
         </div>
 
         <div id="repo-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
             <h3 class="text-2xl font-black uppercase">professional_calculator</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Python calculator project with a more structured, professional codebase.</p>
             <a href="https://github.com/jaswanthreddynaga/professional_calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
           </article>
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
             <h3 class="text-2xl font-black uppercase">QR-Code-Generator</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Python project for creating QR codes.</p>
             <a href="https://github.com/jaswanthreddynaga/QR-Code-Generator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
           </article>
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
             <h3 class="text-2xl font-black uppercase">calculator_adv</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Advanced calculator practice project in Python.</p>
             <a href="https://github.com/jaswanthreddynaga/calculator_adv" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
           </article>
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
             <h3 class="text-2xl font-black uppercase">calculator</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Python calculator fundamentals and logic practice.</p>
             <a href="https://github.com/jaswanthreddynaga/calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
           </article>
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
             <h3 class="text-2xl font-black uppercase">my-calculator</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Another Python calculator implementation used for development practice.</p>
             <a href="https://github.com/jaswanthreddynaga/my-calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
           </article>
-          <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+          <article class="repo-card p-6 transition">
             <div class="font-mono text-xs text-gray-500 mb-3">REFERENCE</div>
             <h3 class="text-2xl font-black uppercase">git-linux-cheatsheet</h3>
             <p class="font-mono text-sm text-gray-600 mt-3">Reference material for Git and Linux commands.</p>
@@ -287,33 +286,33 @@
       </div>
     </section>
 
-    <section class="py-24 px-4 bg-white border-b-4 border-black">
+    <section class="py-24 px-4">
       <div class="max-w-7xl mx-auto">
-        <p class="font-mono text-neo-blue font-bold mb-3">&gt; LIVE_GITHUB_DATA</p>
+        <p class="font-mono text-slate-700 font-bold mb-3">&gt; LIVE_GITHUB_DATA</p>
         <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-10">Developer_Stats</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
-          <div class="border-4 border-black bg-neo-yellow p-6 shadow-hard"><div class="font-mono text-sm">PUBLIC_REPOS</div><div id="stat-repos" class="text-5xl font-black mt-2">8</div></div>
-          <div class="border-4 border-black bg-neo-green p-6 shadow-hard"><div class="font-mono text-sm">FOLLOWERS</div><div id="stat-followers" class="text-5xl font-black mt-2">1</div></div>
-          <div class="border-4 border-black bg-neo-pink p-6 shadow-hard"><div class="font-mono text-sm">FOLLOWING</div><div id="stat-following" class="text-5xl font-black mt-2">1</div></div>
-          <div class="border-4 border-black bg-neo-blue text-white p-6 shadow-hard"><div class="font-mono text-sm">PRIMARY</div><div class="text-4xl font-black mt-2">PYTHON</div></div>
+          <div class="p-6"><div class="font-mono text-sm">PUBLIC_REPOS</div><div id="stat-repos" class="text-5xl font-black mt-2">8</div></div>
+          <div class="p-6"><div class="font-mono text-sm">FOLLOWERS</div><div id="stat-followers" class="text-5xl font-black mt-2">1</div></div>
+          <div class="p-6"><div class="font-mono text-sm">FOLLOWING</div><div id="stat-following" class="text-5xl font-black mt-2">1</div></div>
+          <div class="text-slate-700 p-6"><div class="font-mono text-sm">PRIMARY</div><div class="text-4xl font-black mt-2">PYTHON</div></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="py-24 px-4 bg-neo-pink border-b-4 border-black">
+    <section id="contact" class="py-24 px-4">
       <div class="max-w-5xl mx-auto text-center reveal">
         <p class="font-mono font-bold">&gt; CONNECTION_REQUEST</p>
         <h2 class="text-6xl md:text-9xl font-black uppercase tracking-tighter mt-3 mb-8">Let's Build.</h2>
         <p class="font-mono text-lg md:text-xl max-w-2xl mx-auto mb-10">Connect with me through GitHub or LinkedIn for software, AI, and data-focused opportunities.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-5">
-          <a href="https://github.com/jaswanthreddynaga" target="_blank" rel="noreferrer" class="bg-black text-white border-4 border-black px-8 py-4 font-bold text-lg shadow-hard hover:bg-neo-green hover:text-black transition"><i class="ri-github-fill mr-2"></i>GITHUB</a>
-          <a href="https://www.linkedin.com/in/jaswanth-reddy-naga-a1aaa031a" target="_blank" rel="noreferrer" class="bg-white border-4 border-black px-8 py-4 font-bold text-lg shadow-hard hover:bg-neo-blue hover:text-white transition"><i class="ri-linkedin-box-fill mr-2"></i>LINKEDIN</a>
+          <a href="https://github.com/jaswanthreddynaga" target="_blank" rel="noreferrer" class="text-slate-700 px-8 py-4 font-bold text-lg hover:text-black transition"><i class="ri-github-fill mr-2"></i>GITHUB</a>
+          <a href="https://www.linkedin.com/in/jaswanth-reddy-naga-a1aaa031a" target="_blank" rel="noreferrer" class="px-8 py-4 font-bold text-lg hover:text-white transition"><i class="ri-linkedin-box-fill mr-2"></i>LINKEDIN</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-neo-black text-white px-4 py-10">
+  <footer class="text-slate-700 px-4 py-10">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 font-mono">
       <div>
         <div class="font-black text-2xl">JASWANTH.exe</div>
@@ -363,7 +362,7 @@
         if (filtered.length) {
           const grid = document.getElementById('repo-grid');
           grid.innerHTML = filtered.map(repo => `
-            <article class="repo-card bg-white border-4 border-black shadow-hard p-6 transition">
+            <article class="repo-card p-6 transition">
               <div class="flex justify-between gap-4">
                 <div class="font-mono text-xs text-gray-500">${esc(repo.language || 'REPOSITORY')}</div>
                 <div class="font-mono text-xs">★ ${repo.stargazers_count}</div>
