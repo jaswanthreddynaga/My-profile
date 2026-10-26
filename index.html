@@ -74,6 +74,24 @@
     h1, h2, h3 { color: #f1f7fc; }
     p, h1 { text-shadow: 0 2px 16px rgba(0,0,0,.35); }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+    /* Cinematic portal entrance; the aperture reveals the actual page beneath. */
+    @property --portal-radius { syntax: '<length>'; inherits: true; initial-value: 0px; }
+    #portal-intro { --portal-radius: 0px; position: fixed; inset: 0; z-index: 1000; pointer-events: none; animation: portal-open 2.9s cubic-bezier(.55,.02,.25,1) both; }
+    .portal-veil { position: absolute; inset: 0; background: #02050b; -webkit-mask-image: radial-gradient(circle at center, transparent max(0px, calc(var(--portal-radius) - 2px)), #000 var(--portal-radius)); mask-image: radial-gradient(circle at center, transparent max(0px, calc(var(--portal-radius) - 2px)), #000 var(--portal-radius)); }
+    .portal-ring { position: absolute; top: 50%; left: 50%; width: calc(var(--portal-radius) * 2); height: calc(var(--portal-radius) * 2); transform: translate(-50%,-50%); border: 3px solid #ffcb73; border-radius: 50%; box-shadow: 0 0 5px #fff1bf, 0 0 18px #ff9a24, 0 0 42px #fa6019, inset 0 0 22px #ff781d; }
+    .portal-ring::before, .portal-ring::after { content: ''; position: absolute; inset: -9px; border-radius: 50%; border: 3px dashed #ff9e36; filter: drop-shadow(0 0 7px #ff7a00); animation: portal-spin .85s linear infinite; }
+    .portal-ring::after { inset: 7px; border-width: 2px; border-color: #ffe2a0; animation-direction: reverse; animation-duration: 1.3s; }
+    .portal-spark { position: absolute; left: 50%; top: 50%; width: var(--spark-length); height: 2px; border-radius: 100%; background: #ffe1a0; box-shadow: 0 0 5px #ffae31, 0 0 10px #ff6b00; transform-origin: 0 0; animation: portal-spark .65s ease-out infinite; animation-delay: var(--delay); }
+    .portal-caption { position: absolute; bottom: 10%; left: 0; right: 0; text-align: center; color: #ffdaa0; font: 600 11px 'JetBrains Mono', monospace; letter-spacing: .28em; animation: portal-caption 2.9s ease both; }
+    .portal-skip { position: absolute; bottom: 22px; right: 24px; pointer-events: auto; color: #e4d5bf; background: transparent; border: 0; padding: 12px; font: 500 12px 'Space Grotesk', sans-serif; cursor: pointer; animation: portal-caption 2.9s ease both; }
+    .portal-skip:hover { color: white; }
+    .portal-skip:focus-visible { outline: 2px solid #ffcc80; outline-offset: 3px; }
+    @keyframes portal-open { 0% { --portal-radius: 0px; opacity: 1; } 25% { --portal-radius: 22vmin; opacity: 1; } 58% { --portal-radius: 25vmin; opacity: 1; } 94% { --portal-radius: 155vmax; opacity: 1; } 100% { --portal-radius: 165vmax; opacity: 0; visibility: hidden; } }
+    @keyframes portal-spin { to { rotate: 360deg; } }
+    @keyframes portal-spark { 0% { opacity: 0; transform: rotate(var(--angle)) translateX(var(--portal-radius)) rotate(22deg) scaleX(.3); } 20% { opacity: 1; } 100% { opacity: 0; transform: rotate(var(--angle)) translateX(calc(var(--portal-radius) + var(--reach))) rotate(22deg) scaleX(.8); } }
+    @keyframes portal-caption { 0%, 65% { opacity: 1; } 85%, 100% { opacity: 0; visibility: hidden; } }
+    @media (prefers-reduced-motion: reduce) { #portal-intro { display: none !important; } }
   </style>
 
   <script type="application/ld+json">
@@ -97,6 +115,27 @@
 </head>
 
 <body class="font-display">
+  <script>
+    (() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const intro = document.createElement('div');
+      intro.id = 'portal-intro';
+      const sparks = Array.from({length: 90}, (_, i) => {
+        const angle = i * 137.508 % 360;
+        const reach = 25 + i * 17 % 105;
+        return '<span class="portal-spark" style="--angle:' + angle + 'deg;--reach:' + reach + 'px;--delay:-' + (i % 13 * .05) + 's;--spark-length:' + (6 + i % 7 * 3) + 'px" aria-hidden="true"></span>';
+      }).join('');
+      intro.innerHTML = '<div class="portal-veil" aria-hidden="true"></div><div class="portal-ring" aria-hidden="true"></div>' + sparks + '<div class="portal-caption" aria-hidden="true">JASWANTH REDDY</div><button class="portal-skip" type="button" aria-label="Skip entrance animation">Skip intro ↗</button>';
+      document.body.prepend(intro);
+      intro.querySelector('button').addEventListener('click', () => intro.remove());
+      intro.addEventListener('animationend', (event) => {
+        if (event.target === intro) intro.remove();
+      });
+      // Failsafe: a disabled or interrupted animation must never obscure the site.
+      window.setTimeout(() => intro.remove(), 3500);
+    })();
+  </script>
+
   <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur">
     <div class="max-w-7xl mx-auto px-4 h-16 flex items-center">
       <a href="index.html" class="font-black text-xl md:text-2xl tracking-tighter">JASWANTH REDDY</a>
