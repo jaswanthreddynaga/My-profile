@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jaswanth Reddy Naga — AI Engineer & Software Developer at Thrill AI. M.S. Data Science, NJIT '26; B.Tech, VIT Vellore '23." />
+  <meta name="keywords" content="Jaswanth Reddy Naga, AI Engineer, Software Developer, Data Science, NJIT, VIT Vellore, Python, GitHub" />
+  <meta name="author" content="Jaswanth Reddy Naga" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jaswanth Reddy Naga | AI Engineer & Software Developer" />
+  <meta property="og:description" content="AI Engineer & Software Developer building practical software and data-driven systems." />
+  <meta property="og:image" content="portrait.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Projects | Jaswanth Reddy Naga</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            neo: {
+              yellow: '#FFE500',
+              pink: '#FF5CCA',
+              blue: '#246BFD',
+              green: '#31E981',
+              red: '#FF4242',
+              orange: '#FF8A00',
+              cream: '#F8F2E8',
+              black: '#101010'
+            }
+          },
+          boxShadow: {
+            hard: '6px 6px 0 #101010',
+            'hard-sm': '3px 3px 0 #101010',
+            'hard-xl': '10px 10px 0 #101010'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 5rem; }
+    body { background: #04111f; color: #f1f7fc; overflow-x: hidden; isolation: isolate; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(rgba(2,10,23,.55), rgba(2,10,23,.77)), url('aurora-earth.jpg') center center / cover no-repeat; }
+    body::after { content: ''; position: fixed; inset: 0; z-index: -2; background: #04111f; pointer-events: none; }
+    ::selection { background: #cbdff3; color: #172b44; }
+    nav { background: rgba(3,14,28,.74); backdrop-filter: blur(12px); }
+    section, footer { background: transparent; }
+    .stroke { color: #a4e8ed; }
+    .marquee { display: none; }
+    .reveal { opacity: 1; transform: none; }
+    a { color: #b5eef4; text-underline-offset: 5px; }
+    a:hover { color: #ffffff; text-decoration: underline; }
+    a:focus-visible { outline: 2px solid #a4e8ed; outline-offset: 5px; }
+    h1 { font-size: clamp(2.5rem, 7.6vw, 7rem) !important; line-height: 1.08 !important; letter-spacing: -.045em !important; }
+    h2 { font-size: clamp(2rem, 5vw, 4rem) !important; overflow-wrap: anywhere; }
+    h3 { overflow-wrap: anywhere; }
+    #about img { filter: none; }
+    #about .max-w-md { padding: 0; }
+    .repo-card { padding: 1.5rem 0; }
+    .repo-card:hover { transform: none; box-shadow: none; }
+    .text-gray-400, .text-gray-500, .text-gray-600, .text-gray-700, .text-slate-700 { color: #d0e0ee !important; }
+    h1, h2, h3 { color: #f1f7fc; }
+    p, h1 { text-shadow: 0 2px 16px rgba(0,0,0,.35); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Jaswanth Reddy Naga",
+    "jobTitle":"AI Engineer & Software Developer",
+    "url":"https://github.com/jaswanthreddynaga",
+    "image":"portrait.png",
+    "alumniOf":[
+      {"@type":"CollegeOrUniversity","name":"New Jersey Institute of Technology"},
+      {"@type":"CollegeOrUniversity","name":"VIT Vellore"}
+    ],
+    "sameAs":[
+      "https://github.com/jaswanthreddynaga",
+      "https://www.linkedin.com/in/jaswanth-reddy-naga-a1aaa031a"
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-display">
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-black text-xl md:text-2xl tracking-tighter glitch">JASWANTH.exe</a>
+      <div class="hidden md:flex items-center gap-6 font-mono font-bold text-sm">
+        <a class="nav-link" href="index.html#about">/ABOUT</a>
+        <a class="nav-link" href="index.html#skills">/SKILLS</a>
+        <a class="nav-link" href="index.html#experience">/LOGS</a>
+        <a class="nav-link" href="projects.html" aria-current="page">/WORK</a>
+        <a href="index.html#contact" class="px-4 py-2 transition">CONNECT</a>
+      </div>
+      <a class="md:hidden px-3 py-2 font-mono font-bold" href="projects.html" aria-current="page">WORK</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="projects" class="pt-32 pb-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <a href="index.html" class="inline-block mb-6 font-mono">← BACK TO HOME</a>
+            <p class="font-mono font-bold">&gt; PUBLIC_REPOSITORIES</p>
+            <h2 class="text-6xl md:text-9xl font-black uppercase tracking-tighter text-slate-700">Projects</h2>
+          </div>
+          <a href="https://github.com/jaswanthreddynaga?tab=repositories" target="_blank" rel="noreferrer" class="text-slate-700 px-6 py-4 font-mono font-bold hover:text-white transition">ALL REPOS ↗</a>
+        </div>
+
+        <div id="repo-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
+            <h3 class="text-2xl font-black uppercase">professional_calculator</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Python calculator project with a more structured, professional codebase.</p>
+            <a href="https://github.com/jaswanthreddynaga/professional_calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
+            <h3 class="text-2xl font-black uppercase">QR-Code-Generator</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Python project for creating QR codes.</p>
+            <a href="https://github.com/jaswanthreddynaga/QR-Code-Generator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
+            <h3 class="text-2xl font-black uppercase">calculator_adv</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Advanced calculator practice project in Python.</p>
+            <a href="https://github.com/jaswanthreddynaga/calculator_adv" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
+            <h3 class="text-2xl font-black uppercase">calculator</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Python calculator fundamentals and logic practice.</p>
+            <a href="https://github.com/jaswanthreddynaga/calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
+            <h3 class="text-2xl font-black uppercase">my-calculator</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Another Python calculator implementation used for development practice.</p>
+            <a href="https://github.com/jaswanthreddynaga/my-calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+          <article class="repo-card p-6 transition">
+            <div class="font-mono text-xs text-gray-500 mb-3">REFERENCE</div>
+            <h3 class="text-2xl font-black uppercase">git-linux-cheatsheet</h3>
+            <p class="font-mono text-sm text-gray-600 mt-3">Reference material for Git and Linux commands.</p>
+            <a href="https://github.com/jaswanthreddynaga/git-linux-cheatsheet" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
+          </article>
+        </div>
+        <p id="repo-note" class="font-mono text-xs mt-6 opacity-70">Live GitHub API will replace these fallback cards when available.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-slate-700 px-4 py-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 font-mono">
+      <div>
+        <div class="font-black text-2xl">JASWANTH.exe</div>
+        <div class="text-gray-400 text-sm mt-2">AI Engineer • Software Developer • Data Science</div>
+      </div>
+      <div class="text-gray-400 text-sm md:text-right">
+        <div>GitHub: @jaswanthreddynaga</div>
+        <div class="mt-1">© <span id="year"></span> Jaswanth Reddy Naga</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const esc = (value='') => String(value).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    }[c]));
+
+    async function loadGitHub() {
+      try {
+        const [profileRes, reposRes] = await Promise.all([
+          fetch('https://api.github.com/users/jaswanthreddynaga'),
+          fetch('https://api.github.com/users/jaswanthreddynaga/repos?sort=updated&per_page=100')
+        ]);
+        if (!profileRes.ok || !reposRes.ok) throw new Error('GitHub API unavailable');
+
+        const profile = await profileRes.json();
+        const repos = await reposRes.json();
+
+        if (document.getElementById('stat-repos')) document.getElementById('stat-repos').textContent = profile.public_repos ?? 8;
+        if (document.getElementById('stat-followers')) document.getElementById('stat-followers').textContent = profile.followers ?? 1;
+        if (document.getElementById('stat-following')) document.getElementById('stat-following').textContent = profile.following ?? 1;
+
+        const filtered = repos
+          .filter(r => !r.fork)
+          .sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at))
+          .slice(0, 6);
+
+        if (filtered.length && document.getElementById('repo-grid')) {
+          const grid = document.getElementById('repo-grid');
+          grid.innerHTML = filtered.map(repo => `
+            <article class="repo-card p-6 transition">
+              <div class="flex justify-between gap-4">
+                <div class="font-mono text-xs text-gray-500">${esc(repo.language || 'REPOSITORY')}</div>
+                <div class="font-mono text-xs">★ ${repo.stargazers_count}</div>
+              </div>
+              <h3 class="text-2xl font-black uppercase mt-3 break-words">${esc(repo.name)}</h3>
+              <p class="font-mono text-sm text-gray-600 mt-3 min-h-[4.5rem]">${esc(repo.description || 'GitHub project by Jaswanth Reddy Naga.')}</p>
+              <div class="flex items-center justify-between gap-3 mt-6">
+                <span class="font-mono text-xs text-gray-500">Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
+                <a href="${repo.html_url}" class="font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN ↗</a>
+              </div>
+            </article>
+          `).join('');
+          document.getElementById('repo-note').textContent = 'Projects loaded live from GitHub.';
+        }
+      } catch (err) {
+        if (document.getElementById('repo-note')) document.getElementById('repo-note').textContent = 'Showing built-in project cards. GitHub API can refresh them when available.';
+      }
+    }
+    loadGitHub();
+  </script>
+</body>
+</html>

@@ -105,10 +105,10 @@
         <a class="nav-link" href="#about">/ABOUT</a>
         <a class="nav-link" href="#skills">/SKILLS</a>
         <a class="nav-link" href="#experience">/LOGS</a>
-        <a class="nav-link" href="#projects">/WORK</a>
+        <a class="nav-link" href="projects.html">/WORK</a>
         <a href="#contact" class="px-4 py-2 transition">CONNECT</a>
       </div>
-      <a class="md:hidden px-3 py-2 font-mono font-bold" href="#projects">WORK</a>
+      <a class="md:hidden px-3 py-2 font-mono font-bold" href="projects.html">WORK</a>
     </div>
   </nav>
 
@@ -133,7 +133,7 @@
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-5 reveal">
-          <a href="#projects" class="text-slate-700 px-8 py-4 font-bold text-lg hover:text-white transition">VIEW PROJECTS</a>
+          <a href="projects.html" class="text-slate-700 px-8 py-4 font-bold text-lg hover:text-white transition">VIEW PROJECTS</a>
           <a href="https://github.com/jaswanthreddynaga" target="_blank" rel="noreferrer" class="px-8 py-4 font-bold text-lg transition">
             <i class="ri-github-fill mr-2"></i>GITHUB PROFILE
           </a>
@@ -238,57 +238,7 @@
       </div>
     </section>
 
-    <section id="projects" class="py-24 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <p class="font-mono font-bold">&gt; PUBLIC_REPOSITORIES</p>
-            <h2 class="text-6xl md:text-9xl font-black uppercase tracking-tighter text-slate-700">Selected_Work</h2>
-          </div>
-          <a href="https://github.com/jaswanthreddynaga?tab=repositories" target="_blank" rel="noreferrer" class="text-slate-700 px-6 py-4 font-mono font-bold hover:text-white transition">ALL REPOS ↗</a>
-        </div>
 
-        <div id="repo-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
-            <h3 class="text-2xl font-black uppercase">professional_calculator</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Python calculator project with a more structured, professional codebase.</p>
-            <a href="https://github.com/jaswanthreddynaga/professional_calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
-            <h3 class="text-2xl font-black uppercase">QR-Code-Generator</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Python project for creating QR codes.</p>
-            <a href="https://github.com/jaswanthreddynaga/QR-Code-Generator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
-            <h3 class="text-2xl font-black uppercase">calculator_adv</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Advanced calculator practice project in Python.</p>
-            <a href="https://github.com/jaswanthreddynaga/calculator_adv" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
-            <h3 class="text-2xl font-black uppercase">calculator</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Python calculator fundamentals and logic practice.</p>
-            <a href="https://github.com/jaswanthreddynaga/calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">PYTHON_PROJECT</div>
-            <h3 class="text-2xl font-black uppercase">my-calculator</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Another Python calculator implementation used for development practice.</p>
-            <a href="https://github.com/jaswanthreddynaga/my-calculator" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-          <article class="repo-card p-6 transition">
-            <div class="font-mono text-xs text-gray-500 mb-3">REFERENCE</div>
-            <h3 class="text-2xl font-black uppercase">git-linux-cheatsheet</h3>
-            <p class="font-mono text-sm text-gray-600 mt-3">Reference material for Git and Linux commands.</p>
-            <a href="https://github.com/jaswanthreddynaga/git-linux-cheatsheet" class="inline-block mt-6 font-mono font-bold underline" target="_blank" rel="noreferrer">OPEN REPO ↗</a>
-          </article>
-        </div>
-        <p id="repo-note" class="font-mono text-xs mt-6 opacity-70">Live GitHub API will replace these fallback cards when available.</p>
-      </div>
-    </section>
 
     <section class="py-24 px-4">
       <div class="max-w-7xl mx-auto">
@@ -354,16 +304,16 @@
         const profile = await profileRes.json();
         const repos = await reposRes.json();
 
-        document.getElementById('stat-repos').textContent = profile.public_repos ?? 8;
-        document.getElementById('stat-followers').textContent = profile.followers ?? 1;
-        document.getElementById('stat-following').textContent = profile.following ?? 1;
+        if (document.getElementById('stat-repos')) document.getElementById('stat-repos').textContent = profile.public_repos ?? 8;
+        if (document.getElementById('stat-followers')) document.getElementById('stat-followers').textContent = profile.followers ?? 1;
+        if (document.getElementById('stat-following')) document.getElementById('stat-following').textContent = profile.following ?? 1;
 
         const filtered = repos
           .filter(r => !r.fork)
           .sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at))
           .slice(0, 6);
 
-        if (filtered.length) {
+        if (filtered.length && document.getElementById('repo-grid')) {
           const grid = document.getElementById('repo-grid');
           grid.innerHTML = filtered.map(repo => `
             <article class="repo-card p-6 transition">
@@ -382,7 +332,7 @@
           document.getElementById('repo-note').textContent = 'Projects loaded live from GitHub.';
         }
       } catch (err) {
-        document.getElementById('repo-note').textContent = 'Showing built-in project cards. GitHub API can refresh them when available.';
+        if (document.getElementById('repo-note')) document.getElementById('repo-note').textContent = 'Showing built-in project cards. GitHub API can refresh them when available.';
       }
     }
     loadGitHub();
