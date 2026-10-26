@@ -53,7 +53,7 @@
     * { box-sizing: border-box; }
     html { scroll-padding-top: 5rem; }
     body { background: #04111f; color: #f1f7fc; overflow-x: hidden; isolation: isolate; }
-    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(rgba(2,10,23,.55), rgba(2,10,23,.77)), url('aurora-earth.jpg') center center / cover no-repeat; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(rgba(3,12,24,.70), rgba(3,12,24,.84)), url('portrait.png') center 30% / cover no-repeat; }
     body::after { content: ''; position: fixed; inset: 0; z-index: -2; background: #04111f; pointer-events: none; }
     ::selection { background: #cbdff3; color: #172b44; }
     nav { background: rgba(3,14,28,.74); backdrop-filter: blur(12px); }
@@ -67,8 +67,6 @@
     h1 { font-size: clamp(2.5rem, 7.6vw, 7rem) !important; line-height: 1.08 !important; letter-spacing: -.045em !important; }
     h2 { font-size: clamp(2rem, 5vw, 4rem) !important; overflow-wrap: anywhere; }
     h3 { overflow-wrap: anywhere; }
-    #about img { filter: none; }
-    #about .max-w-md { padding: 0; }
     .repo-card { padding: 1.5rem 0; }
     .repo-card:hover { transform: none; box-shadow: none; }
     .text-gray-400, .text-gray-500, .text-gray-600, .text-gray-700, .text-slate-700 { color: #d0e0ee !important; }
@@ -137,16 +135,8 @@
     </div>
 
     <section id="about" class="py-24 px-4">
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-center">
-        <div class="reveal">
-          <div class="p-4 max-w-md mx-auto">
-            <div class="overflow-hidden aspect-square relative">
-              <img src="portrait.png" alt="Jaswanth Reddy Naga portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal">
+      <div class="max-w-4xl mx-auto">
+<div class="reveal">
 
           <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">Jaswanth<br>Reddy Naga</h2>
           <p class="text-xl md:text-2xl font-bold mb-5">
